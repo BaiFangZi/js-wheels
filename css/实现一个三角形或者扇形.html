@@ -24,8 +24,32 @@
       border-top: 150px solid transparent;
       border-bottom: 150px solid springgreen;
     }
+
+    .arrow {
+      /* display: inline-block; */
+      width: 0;
+      height: 0;
+      border: 16px solid;
+      border-color: transparent red transparent transparent;
+      position: relative;
+    }
+    .arrow::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: -16px;
+      border: 16px solid;
+      border-color: transparent #fff transparent transparent;
+    }
+    .arrow.bottom {
+      transform: rotate(270deg);
+    }
   </style>
   <body>
+    <div class="box">
+      <!-- 两个三角形进行叠加,u背景色相同进行覆盖 -->
+      <div class="arrow bottom"></div>
+    </div>
     <div class="fan"></div>
     <div class="triangle"></div>
   </body>
